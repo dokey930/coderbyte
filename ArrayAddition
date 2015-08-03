@@ -1,0 +1,11 @@
+def ArrayAdditionI(arr)
+  arr = arr.sort   
+  largest = arr.pop
+
+  (1 .. arr.size).each do |n|
+    arr.combination(n) do |comb|
+      comb.inject(&:+) == largest and return "true"
+    end
+  end
+  "false"
+end
